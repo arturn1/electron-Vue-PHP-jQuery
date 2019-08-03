@@ -2,7 +2,7 @@
 session_start();
 $con = mysqli_connect("localhost", "sqluser", "midas", "first_db"); //Connect to server
 $username = mysqli_real_escape_string($con, $_POST['username']);
-$password = mysqli_real_escape_string($con, $_POST['password']);
+$password = mysqli_real_escape_string($con, md5($_POST['password']));
 mysqli_select_db($con, "first_db") or die("Cannot connect to database"); //Connect to database
 $query = mysqli_query($con, "SELECT * from users WHERE username='$username'"); //Query the users table if there are matching rows equal to $username
 $exists = mysqli_num_rows($query); //Checks if username exists
@@ -22,7 +22,7 @@ if ($exists > 0) //IF there are no returning rows or no existing username
                     header("location: home.php"); // redirects the user to the authenticated home page
                 }
             } else {
-            print '<div class="container alert alert-success">Incorrect password</div>'; //Prompts the user
+            print '<div class="container alert alert-success">Incorrect</div>'; //Prompts the user
             print '<script>window.location.assign("login.php");</script>'; // redirects to login.php
         }
     } else {

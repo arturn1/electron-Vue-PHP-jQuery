@@ -1,49 +1,27 @@
-<link rel="stylesheet" href="photon-0.1.2-dist/css/photon.min.css">
+<html>
 
+<?php
+include("bstp.php");
+?>
 
-<header class="toolbar toolbar-header">
-  <h1 class="title">Header with actions</h1>
+<head>
+  <title>My first PHP Website</title>
 
-  <div class="toolbar-actions">
-    <div class="btn-group">
-      <button class="btn btn-default">
-        <span class="icon icon-home"></span>
-      </button>
-      <button class="btn btn-default">
-        <span class="icon icon-folder"></span>
-      </button>
-      <button class="btn btn-default active">
-        <span class="icon icon-cloud"></span>
-      </button>
-      <button class="btn btn-default">
-        <span class="icon icon-popup"></span>
-      </button>
-      <button class="btn btn-default">
-        <span class="icon icon-shuffle"></span>
-      </button>
-    </div>
+</head>
 
-    <button class="btn btn-default">
-      <span class="icon icon-home icon-text"></span>
-      Filters
-    </button>
-
-    <button class="btn btn-default btn-dropdown pull-right">
-      <span class="icon icon-megaphone"></span>
-    </button>
+<body>
+  <div id="myheader">
+    <my-header></my-header>
   </div>
-</header>
 
-...
+  <div style="padding-top: 100px;" id="button-counter" class="container pad_top">
+    <button-counter class="btn btn-info"></button-counter>
 
-<footer class="toolbar toolbar-footer">
-  <div class="toolbar-actions">
-    <button class="btn btn-default">
-      Cancel
-    </button>
-
-    <button class="btn btn-primary pull-right">
-      Save
-    </button>
+    <a href="login.php" class="btn btn-danger float-right" style="display:none">Click here to back</a></p>
   </div>
-</footer>
+
+</body>
+<script src="./controller.js"></script>
+<link rel="stylesheet" href="./css/myCss.css">
+
+</html>

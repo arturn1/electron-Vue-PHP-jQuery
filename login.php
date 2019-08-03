@@ -6,16 +6,21 @@ include("bstp.php");
 
 <head>
     <title>My first PHP Website</title>
+
 </head>
+<div id="myheader">
+    <my-header></my-header>
+</div>
+
 
 <body>
-    <div class="jumbotron container">
+    <div class="jumbotron jumbotron-fluid" id="jumbo" style="display:none">
         <div>
             <h1 class="display-3" align="center">Login</h1>
-            <h3> Insira seus dados</h3>
+            <h3 align="center"> Insira seus dados</h3>
         </div>
     </div>
-    <div class="container" id="app">
+    <div class="container" id="app" style="display:none">
         {{ message }}
     </div>
     <div class="container">
@@ -30,15 +35,7 @@ include("bstp.php");
             </div>
         </form>
     </div>
+    <script type="text/javascript" src="./controller.js"></script>
 </body>
-
-<script>
-    var app = new Vue({
-        el: '#app',
-        data: {
-            message: 'Hello Vue!'
-        }
-    })
-</script>
 
 </html>

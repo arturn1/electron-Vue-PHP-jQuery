@@ -7,10 +7,14 @@
 </head>
 
 <body>
-    <div class="jumbotron container">
+    <div id="myheader">
+        <my-header></my-header>
+    </div>
+
+    <div class="jumbotron jumbotron-fluid" id="jumbo" style="display:none">
         <div>
-            <h1 class="display-3">Site do Artur</h1>
-            <h3> Este é um site que usa PHP, bootstrap e Vue</h3>
+            <h1 class="display-3" align="center">Site do Artur</h1>
+            <h3 align="center"> Este é um site que usa PHP, Bootstrap e Vue</h3>
         </div>
     </div>
     <div class="container">
@@ -18,5 +22,6 @@
         <a href="register.php" class="btn btn-primary float-right">Register</a>
     </div>
 </body>
+<script type="text/javascript" src="./controller.js"></script>
 
 </html>

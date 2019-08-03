@@ -2,9 +2,12 @@
 
 <head>
     <title>My first PHP website</title>
+
 </head>
+
 <?php
 include("bstp.php");
+
 session_start(); //starts the session
 if ($_SESSION['user']) { //checks if user is logged in
 } else {
@@ -13,16 +16,19 @@ if ($_SESSION['user']) { //checks if user is logged in
 $user = $_SESSION['user']; //assigns user value
 ?>
 
+<div id="myheader">
+        <my-header></my-header>
+    </div>
 
 <body>
-    <div class="jumbotron container">
-        <div>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container" >
             <h1 class="display-3" align="center">Home</h1>
             <h2 align="center">CRUD</h2>
             <!--Displays user's name-->
-            <button type="button" class="btn btn-primary" disabled>
+            <button type="button" class="btn btn-primary" disabled style="display:none">
                 Seja bem vindo(a) <?php print "$user" ?></button>
-            <a href="logout.php" class="btn btn-danger float-right">Click here to logout</a></p>
+            <a href="logout.php" class="btn btn-danger float-right" style="display:none">Click here to logout</a></p>
         </div>
     </div>
 
@@ -109,20 +115,7 @@ $user = $_SESSION['user']; //assigns user value
         </div>
     </div>
     <script type="text/javascript">
-        $(document).ready(function() {
-            $(".btn-danger").hover(function() {
-                $(this).css({
-                    "background-color": "yellow",
-                    "color": "black"
-                });
-                $(this).mouseleave(function() {
-                    $(this).css({
-                        "background-color": "red",
-                        "color": "white"
-                    });
-                })
-            })
-        });
+
     </script>
 
 
@@ -134,39 +127,40 @@ $user = $_SESSION['user']; //assigns user value
                 window.location.assign("delete.php?id=" + data);
             }
         }
+        /*
+                var firstTable = new Vue({
+                    el: '#firstTable',
+                    data() {
+                        return {
+                            rows: [],
 
-        var firstTable = new Vue({
-            el: '#firstTable',
-            data() {
-                return {
-                    rows: [],
+                        }
+                    },
+                    methods: {
+                        getAllUsers() {
+                            var self = this; // Armazena a instância do Vue em self
 
-                }
-            },
-            methods: {
-                getAllUsers() {
-                    var self = this; // Armazena a instância do Vue em self
+                            fetch("http://127.0.0.1:11000/api.php")
+                                .then(response => response.json()).then(data => self.rows = data);
+                            //.then(console.log(rows));
+                            // Faz referência a data.users
+                            //})
 
-                    fetch("http://127.0.0.1:11000/api.php")
-                        .then(response => response.json()).then(data => self.rows = data);
-                    //.then(console.log(rows));
-                    // Faz referência a data.users
-                    //})
-
-                },
-                myFunction(index) {
-                    let id = index
-                    var r = confirm("Are you sure you want to delete this record?");
-                    if (r == true) {
-                        window.location.assign("delete.php?id=" + id);
+                        },
+                        myFunction(index) {
+                            let id = index
+                            var r = confirm("Are you sure you want to delete this record?");
+                            if (r == true) {
+                                window.location.assign("delete.php?id=" + id);
+                            }
+                        }
+                    },
+                    mounted() {
+                        this.getAllUsers()
                     }
-                }
-            },
-            mounted() {
-                this.getAllUsers()
-            }
-        })
+                })*/
     </script>
+        <script src="./controller.js"></script>
 </body>
 
 </html>
