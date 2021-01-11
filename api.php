@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect("localhost", "sqluser", "midas") or die(ysqli_connect_error()); //Connect to server
+$con = mysqli_connect("localhost", "kde", "midas") or die(ysqli_connect_error()); //Connect to server
 mysqli_select_db($con, "first_db") or die("Cannot connect to database"); //connect to database
 $query = mysqli_query($con, "Select * from list"); // SQL Query
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$con = mysqli_connect("localhost", "sqluser", "midas", "first_db"); //Connect to server
+$con = mysqli_connect("localhost", "kde", "midas", "first_db"); //Connect to server
 $username = mysqli_real_escape_string($con, $_POST['username']);
 $password = mysqli_real_escape_string($con, md5($_POST['password']));
 mysqli_select_db($con, "first_db") or die("Cannot connect to database"); //Connect to database
