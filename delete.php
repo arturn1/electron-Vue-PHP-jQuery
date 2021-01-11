@@ -1,6 +1,6 @@
 <?php
     session_start(); //starts the session
-    $con = mysqli_connect("localhost", "sqluser", "midas", "first_db");
+    $con = mysqli_connect("localhost", "kde", "midas", "first_db");
 	if($_SESSION['user']){ //checks if user is logged in
 	}
 	else{
